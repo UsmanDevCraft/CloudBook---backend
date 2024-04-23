@@ -7,17 +7,18 @@ const jwt = require('jsonwebtoken');
 const fetchuser = require('../middleware/fetchuser');
 const JWT_SECRET = 'usman&boy@28';
 
-
+let body = () => {};
 //ROUTE:1 POST REQUEST FOR CREATING A NEW USER
 router.post('/createuser' , async (req, res)=>{
 
     //Return bad request on error
     // const errors = validationResult(req);
-    const errors = null;
-    let success = false;
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    //  const errors = null;
+
+    // let success = false;
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
     
     try {
 
@@ -59,15 +60,15 @@ router.post('/createuser' , async (req, res)=>{
 
 
   //ROUTE:2 POST METHOD FOR USER AUTHENTICATION
-  router.post('/login', async (req, res)=>{
+  router.post('/login',async (req, res)=>{
 
     //Return bad request on error
-    // const errors = validationResult(req);
-    const errors = null;
-    let success = false;
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    };
+   // const errors = validationResult(req);
+  //  const errors = null;
+  //   let success = false;
+  //   if (!errors.isEmpty()) {
+  //     return res.status(400).json({ errors: errors.array() });
+  //   };
 
     //Destructure email and password
     const {email, password} = req.body;

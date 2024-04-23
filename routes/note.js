@@ -21,14 +21,17 @@ router.get('/fetchallnotes', fetchuser , async (req, res)=>{
 
 
 //ROUTE:2 POST METHOD FOR ADDING A NOTE
-router.post('/addnote', fetchuser , async (req, res)=>{
+router.post('/addnote', fetchuser ,[
+    // body('title', 'Enter a valid title').isLength({min: 3}),
+    // body('description', 'Description must be atleast 5 letters').isLength({min: 5}),
+] , async (req, res)=>{
 
     //Return bad request on error
     // const errors = validationResult(req);
     const errors = null;
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    };
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // };
 
     try {
 
